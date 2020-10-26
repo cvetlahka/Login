@@ -12,25 +12,34 @@ class ViewController: UIViewController {
     @IBOutlet var textName: UITextField!
     @IBOutlet var textPassword: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super .touchesBegan(touches, with: event)
     }
     
     @IBAction func buttonLogInn() {
+        
         if textName.text != "Светлана" {
             showMessage(title: "Ошибка", message: "Неверное имя пользователя")
         }
+        
+        
         if textPassword.text != "123" {
             showMessage(title: "Ошибка", message: "Неверный пароль")
         }
         
-        
+        textName.text = ""
+        textPassword.text = ""
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let WelcomePageVC =  segue.destination as? WelcomePageViewController
+        else { return }
+        WelcomePageVC.userName = textName.text
+    }
+    
     
     @IBAction func buttonName() {
         showMessage( title: "Ваше имя:",  message: "Светлана")
@@ -39,6 +48,9 @@ class ViewController: UIViewController {
     @IBAction func buttonPassword() {
         showMessage(title: "Ваш пароль:", message: "123")
     }
+    
+   
+    
 
 }
 

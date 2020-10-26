@@ -81,17 +81,17 @@
             </objects>
             <point key="canvasLocation" x="14" y="90"/>
         </scene>
-        <!--Item-->
+        <!--Welcome-->
         <scene sceneID="DFM-Sc-wzz">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ubL-LO-FAu" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ubL-LO-FAu" customClass="WelcomePageViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pw1-5T-4SV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjD-7O-WTA">
-                                <rect key="frame" x="16" y="30" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="30" width="288" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,30 +99,45 @@
                                 <rect key="frame" x="16" y="450" width="288" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="buttonLogOut" destination="ubL-LO-FAu" eventType="touchUpInside" id="Ei3-Pk-pfi"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋🏽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGN-xf-4Dh">
+                                <rect key="frame" x="16" y="242.5" width="288" height="63"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIF-5Z-br9"/>
                         <color key="backgroundColor" red="0.66386298406808775" green="0.75911786328645936" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IIF-5Z-br9" firstAttribute="bottom" secondItem="4UA-bc-EY5" secondAttribute="bottom" constant="16" id="CDB-aW-upD"/>
                             <constraint firstItem="IIF-5Z-br9" firstAttribute="trailing" secondItem="WjD-7O-WTA" secondAttribute="trailing" constant="16" id="Gci-zQ-p3E"/>
+                            <constraint firstItem="YGN-xf-4Dh" firstAttribute="centerY" secondItem="pw1-5T-4SV" secondAttribute="centerY" id="JpJ-8F-4Um"/>
                             <constraint firstItem="IIF-5Z-br9" firstAttribute="trailing" secondItem="4UA-bc-EY5" secondAttribute="trailing" constant="16" id="PDK-28-QrE"/>
+                            <constraint firstItem="IIF-5Z-br9" firstAttribute="trailing" secondItem="YGN-xf-4Dh" secondAttribute="trailing" constant="16" id="WhB-R8-SOu"/>
                             <constraint firstItem="WjD-7O-WTA" firstAttribute="top" secondItem="IIF-5Z-br9" secondAttribute="top" constant="30" id="aPr-8j-jsD"/>
+                            <constraint firstItem="YGN-xf-4Dh" firstAttribute="leading" secondItem="IIF-5Z-br9" secondAttribute="leading" constant="16" id="bIu-30-0SP"/>
                             <constraint firstItem="4UA-bc-EY5" firstAttribute="leading" secondItem="IIF-5Z-br9" secondAttribute="leading" constant="16" id="bnE-WT-2dN"/>
                             <constraint firstItem="WjD-7O-WTA" firstAttribute="leading" secondItem="IIF-5Z-br9" secondAttribute="leading" constant="16" id="bua-ZQ-xOK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="pencil" catalog="system" id="ZvO-o3-Zvr"/>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="video" catalog="system" id="ZvO-o3-Zvr"/>
                     <navigationItem key="navigationItem" id="TpE-8b-O8M"/>
+                    <connections>
+                        <outlet property="welcomeMessage" destination="WjD-7O-WTA" id="prM-8t-abB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7r5-1h-4jY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="90"/>
+            <point key="canvasLocation" x="2100" y="-246"/>
         </scene>
-        <!--Item-->
+        <!--Resume-->
         <scene sceneID="iog-1k-muV">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="R4O-aL-KNO" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="R4O-aL-KNO" customClass="ResumeViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v19-vX-hqK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,11 +157,14 @@
                             <constraint firstItem="vjQ-R2-SoV" firstAttribute="leading" secondItem="fey-2M-tug" secondAttribute="leading" constant="16" id="ZcK-cs-wW8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="person.fill.questionmark" catalog="system" id="I6v-vj-PdU"/>
+                    <tabBarItem key="tabBarItem" title="Resume" image="person.fill.questionmark" catalog="system" id="I6v-vj-PdU"/>
+                    <connections>
+                        <outlet property="textResume" destination="vjQ-R2-SoV" id="845-OT-waz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19K-xw-mIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="89.788732394366193"/>
+            <point key="canvasLocation" x="2100" y="582"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yG0-Yj-qJp">
@@ -165,12 +183,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiV-CS-Cpu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="814"/>
+            <point key="canvasLocation" x="971" y="90"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
+        <image name="video" catalog="system" width="128" height="83"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
